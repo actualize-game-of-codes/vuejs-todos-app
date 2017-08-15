@@ -21,6 +21,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
           this.tasks.push(newTask);
           this.newTaskText = "";
         }
+      },
+      toggleCompleted: function(inputTask) {
+        inputTask.completed = !inputTask.completed;
       }
     },
     computed: {
