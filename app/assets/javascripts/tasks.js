@@ -35,13 +35,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
         return count;
       },
       deleteCompletedTasks: function() {
-        var incompleteTasks = [];
-        this.tasks.forEach(function(task) {
-          if (!task.completed) {
-            incompleteTasks.push(task);
-          }
+        this.tasks = this.tasks.filter(function(task) {
+          return !task.completed;
         });
-        this.tasks = incompleteTasks;
       }
     },
     computed: {
