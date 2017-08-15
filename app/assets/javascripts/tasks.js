@@ -24,6 +24,15 @@ document.addEventListener("DOMContentLoaded", function(event) {
       },
       toggleCompleted: function(inputTask) {
         inputTask.completed = !inputTask.completed;
+      },
+      numberOfIncompleteTasks: function() {
+        var count = 0;
+        this.tasks.forEach(function(task) {
+          if (!task.completed) {
+            count += 1;
+          }
+        });
+        return count;
       }
     },
     computed: {
