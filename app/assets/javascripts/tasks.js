@@ -26,16 +26,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
         inputTask.completed = !inputTask.completed;
       },
       numberOfIncompleteTasks: function() {
-        var count = 0;
-        this.tasks.forEach(function(task) {
-          if (!task.completed) {
-            count += 1;
-          }
-        });
-        return count;
+        return this.getIncompleteTasks().length;
       },
       deleteCompletedTasks: function() {
-        this.tasks = this.tasks.filter(function(task) {
+        this.tasks = this.getIncompleteTasks();
+      },
+      getIncompleteTasks: function() {
+        return this.tasks.filter(function(task) {
           return !task.completed;
         });
       }
