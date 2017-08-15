@@ -1,5 +1,12 @@
 <h1>Tasks</h1>
 <div id="app">
+  <div>
+    <div>
+      New task text: <input type="text" v-model="newTaskText">
+      <button v-on:click="createTask()">Create task</button>
+    </div>  
+  </div>
+
   <ul>
     <li v-for="task in tasks">
       {{ task.text }}
