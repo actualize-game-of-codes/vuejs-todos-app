@@ -1,4 +1,8 @@
 <h1>Tasks</h1>
 <div id="app">
-  {{ message }}
+  <ul>
+    <li v-for="task in tasks">
+      {{ task.text }}
+    </li>
+  </ul>
 </div>
