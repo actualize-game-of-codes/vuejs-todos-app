@@ -33,6 +33,15 @@ document.addEventListener("DOMContentLoaded", function(event) {
           }
         });
         return count;
+      },
+      deleteCompletedTasks: function() {
+        var incompleteTasks = [];
+        this.tasks.forEach(function(task) {
+          if (!task.completed) {
+            incompleteTasks.push(task);
+          }
+        });
+        this.tasks = incompleteTasks;
       }
     },
     computed: {
